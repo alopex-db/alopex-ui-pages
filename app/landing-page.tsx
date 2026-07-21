@@ -114,24 +114,53 @@ export function LandingPage({ locale }: { locale: Locale }) {
   const sectionLabels = locale === "ja" ? ["01 / 課題", "02 / 共通モデル", "03 / 境界", "04 / コンポーネント", "05 / コード例", "06 / ユースケース", "07 / ロードマップ"] : ["01 / THE PROBLEM", "02 / THE MODEL", "03 / THE BOUNDARY", "04 / COMPONENTS", "05 / COMPOSITION", "06 / USE CASES", "07 / ROADMAP"];
   const layers = locale === "ja" ? [["06","APPLICATION","あなたのプロダクト"],["05","APPLICATION COMPONENTS","Data Explorer / Record Editor / Master Detail"],["04","DATA COMPONENTS","Grid / Chart / Pivot / Map / Graph"],["03","UI CORE","DataSource / Schema / Filter / Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","データ処理・描画・操作を担う既存エンジン"]] : [["06","APPLICATION","Your product"],["05","APPLICATION COMPONENTS","Data Explorer / Record Editor / Master Detail"],["04","DATA COMPONENTS","Grid / Chart / Pivot / Map / Graph"],["03","UI CORE","DataSource / Schema / Filter / Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","Data, rendering, and interaction engines"]];
 
-  return <main lang={locale}>
+  return <main lang={locale} className="site">
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Alopex Data UI home"><Mark small/><span>Alopex <b>Data UI</b></span></a>
       <nav aria-label="Main navigation">{t.nav.map((item, i) => <a href={ids[i]} key={item}>{item}</a>)}</nav>
       <div className="header-actions"><a className="lang" href={t.langHref}>{t.lang}</a><a className="button mini" href={siteConfig.githubUrl}>GitHub <span>↗</span></a></div>
     </header>
 
-    <section className="hero shell" id="top">
-      <div className="hero-copy"><p className="eyebrow"><span/>{t.eyebrow}</p><h1>{t.hero}</h1><p className="hero-lead">{t.lead}</p>
-        <div className="button-row"><a className="button primary" href="#components">{t.explore} <span>↓</span></a><a className="button ghost" href="#architecture">{t.viewArchitecture}</a></div>
-        <div className="package-line"><span>$</span> npm install @alopex-data-ui/core</div>
-      </div>
-      <div className="hero-console" aria-label={locale === "ja" ? "複数の接続先を共通のデータ境界で束ねるフロー図" : "Multiple backends meeting one stable data boundary"}>
-        <div className="console-bar"><span><i/><i/><i/></span><code>alopex-data-ui / data source adapters</code><b>READY</b></div>
-        <div className="flow-stage"><div className="engine-switch"><div className="db-node active"><Mark/><div><b>AlopexDB</b><small>DATABASE</small></div></div><span>OR</span><div className="db-node duck"><div className="duck-mark">D</div><div><b>DuckDB</b><small>ANALYTICS</small></div></div><span>OR</span><div className="db-node custom"><div className="source-mark">+</div><div><b>CUSTOM</b><small>API / FILE / STREAM</small></div></div></div><div className="flow-line"><span>ADAPTER</span></div>
-          <div className="core-node"><small>STABLE DATASOURCE CONTRACT</small><strong>{locale === "ja" ? "違いは境界で整える" : "One contract. One UI."}</strong><div>{["DataSource", "Schema", "Filter", "Selection"].map(x => <em key={x}>{x}</em>)}</div></div><div className="fan-lines"/>
-          <div className="ui-nodes">{["FORM", "GRID", "CHART", "GRAPH", "MAP"].map((x,i) => <div key={x}><span className={`glyph g${i}`}/>{x}</div>)}</div>
-        </div><div className="console-status"><span>boundary: stable</span><span>adapters: extensible</span><span>ui: coherent</span></div>
+    <section className="hero-wrap" id="top">
+      <div className="hero shell">
+        <div className="hero-copy"><p className="eyebrow"><span/>{t.eyebrow}</p><h1>{t.hero}</h1><p className="hero-lead">{t.lead}</p>
+          <div className="button-row"><a className="button primary" href="#components">{t.explore} <span>→</span></a><a className="button ghost light" href="#architecture">{t.viewArchitecture}</a></div>
+          <div className="package-line"><span>$</span> npm install @alopex-data-ui/core</div>
+        </div>
+
+        <div className="data-landscape" aria-label={locale === "ja" ? "複数の接続先と一貫したデータアプリケーション画面" : "Multiple backends feeding one coherent data application interface"}>
+          <div className="landscape-header"><span><i/><i/><i/></span><code>alopex-data-ui / workspace</code><b>LIVE</b></div>
+          <div className="landscape-body">
+            <div className="source-stack"><small>BACKENDS</small>
+              {[["DATABASE","AlopexDB"],["ANALYTICS","DuckDB"],["API","REST / GraphQL"],["FILES","CSV / Parquet"]].map(([name,detail],i)=><div className={"source-item tone-" + i} key={name}><i/><span><b>{name}</b><em>{detail}</em></span></div>)}
+            </div>
+            <div className="landscape-flow inbound"><span>ADAPTER</span></div>
+
+            <div className="workspace-shell">
+              <div className="workspace-titlebar"><div><span>Orders</span><small>DATA EXPLORER</small></div><b>● CONNECTED</b></div>
+              <div className="workspace-filters"><span>Region <b>All</b></span><span>Status <b>Active</b></span><span>Period <b>Q3</b></span></div>
+              <div className="workspace-kpis">
+                <div><small>REVENUE</small><b>$842K</b><em>+12.4%</em></div>
+                <div><small>ORDERS</small><b>12,480</b><em>+8.1%</em></div>
+                <div><small>AVG. VALUE</small><b>$67.50</b><em>+3.7%</em></div>
+              </div>
+              <div className="workspace-main">
+                <div className="workspace-table">
+                  <div className="table-row table-head"><span>REGION</span><span>ORDERS</span><span>REVENUE</span></div>
+                  {[["APAC","4,820","$324K"],["North America","3,940","$286K"],["Europe","2,760","$174K"],["Other","960","$58K"]].map(row=><div className="table-row" key={row[0]}>{row.map(cell=><span key={cell}>{cell}</span>)}</div>)}
+                </div>
+                <div className="workspace-chart"><div className="chart-label"><span>Revenue</span><b>LAST 6 MONTHS</b></div><div className="bars">{[42,65,54,78,69,92].map((height,i)=><i key={i} style={{height: height + "%"}}/>)}</div></div>
+              </div>
+              <div className="workspace-footer"><span>DataSource / Schema / Filter / Selection</span><b>BOUNDARY STABLE</b></div>
+            </div>
+
+            <div className="landscape-flow outbound"><span>UI</span></div>
+            <div className="output-stack"><small>SURFACES</small>
+              {["FORM","GRID","CHART","GRAPH","MAP"].map((name,i)=><div key={name}><span className={"glyph g" + i}/><b>{name}</b></div>)}
+            </div>
+          </div>
+          <div className="landscape-status"><span>backend details stay at the boundary</span><span>one coherent interaction model</span></div>
+        </div>
       </div>
     </section>
 
