@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { LandingPage } from "./landing-page";
 
 export const metadata: Metadata = {
-  title: "Alopex Data UI | Data Application Components for Any Data Source",
-  description: "Connect databases, APIs, files, and streams to forms, grids, charts, graphs, maps, and data exploration applications through one DataSource contract.",
+  title: "Alopex Data UI | A Consistent Model for Data Applications",
+  description: "Build forms, grids, charts, graphs, maps, and data exploration applications on one consistent interface model while backend details stay at the boundary.",
   alternates: { canonical: "/", languages: { en: "/", ja: "/ja/" } },
 };
 

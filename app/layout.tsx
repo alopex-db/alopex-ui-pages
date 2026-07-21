@@ -11,14 +11,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
-  const image = new URL("/og-any-source.png", origin).toString();
+  const image = new URL("/og-interface-model.png", origin).toString();
   return {
     metadataBase: new URL(origin),
     title: "Alopex Data UI",
-    description: "Data Application Components for Any Data Source",
+    description: "A Consistent Model for Data Applications",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { type: "website", siteName: "Alopex Data UI", title: "Connect any data source. Keep one application model.", description: "One stable DataSource contract for databases, APIs, files, streams, and custom backends.", images: [{ url: image, width: 1732, height: 908, alt: "Alopex Data UI connecting any data source through adapters" }] },
-    twitter: { card: "summary_large_image", title: "Alopex Data UI", description: "Data Application Components for Any Data Source", images: [image] },
+    openGraph: { type: "website", siteName: "Alopex Data UI", title: "One interface, wherever the data moves.", description: "Keep backend details at the boundary and build every data experience on one coherent interface model.", images: [{ url: image, width: 1734, height: 907, alt: "Alopex Data UI keeping backend details behind one stable boundary" }] },
+    twitter: { card: "summary_large_image", title: "Alopex Data UI", description: "A Consistent Model for Data Applications", images: [image] },
   };
 }
 

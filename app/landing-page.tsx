@@ -14,14 +14,14 @@ type PageCopy = {
 const copy: Record<Locale, PageCopy> = {
   en: {
     nav: ["Overview", "Components", "Architecture", "Examples", "Roadmap"], lang: "JA", langHref: "/ja/",
-    eyebrow: "DATA APPLICATION UI FOR ANY DATA SOURCE",
-    hero: "Connect any data source. Keep one application model.",
-    lead: "Connect databases, APIs, files, and streams to forms, grids, charts, graphs, maps, and data exploration interfaces through one stable DataSource contract.",
+    eyebrow: "A CONSISTENT MODEL FOR DATA APPLICATIONS",
+    hero: "One interface, wherever the data moves.",
+    lead: "Alopex Data UI keeps backend differences out of the interface, so forms, grids, charts, graphs, maps, and exploration tools can evolve as one coherent system.",
     explore: "Explore Components", viewArchitecture: "View Architecture",
-    problem: "Your data source should not dictate your interface",
-    problemBody: "Data-heavy applications often bind queries, schema conversion, filters, and selection state directly to one backend. Changing the source then means rebuilding the UI integration. Alopex Data UI separates those concerns.",
-    concept: "Any source. One application model.",
-    conceptBody: "A source adapter translates schema, queries, filters, selections, and editable records into one DataSource contract. AlopexDB, DuckDB, APIs, files, streams, or your own backend can all connect without leaking source-specific details into components.",
+    problem: "Backend choices should not reshape the product experience",
+    problemBody: "When queries, schema conversion, filters, and selection state are tied directly to a backend, infrastructure decisions spill into the product. Alopex Data UI keeps that complexity at the boundary.",
+    concept: "Different backends. One way of building.",
+    conceptBody: "Adapters translate schema, queries, filters, selections, and editable records into one DataSource contract. Components work with that contract, while backend-specific behavior stays behind the boundary.",
     boundary: "Proven UI engines. A stable data boundary.",
     existingTitle: "Rendering and interaction engines",
     existingBody: "Rendering, controls, virtualization, charts, maps, graph layouts, and editors stay with mature libraries.",
@@ -29,21 +29,21 @@ const copy: Record<Locale, PageCopy> = {
     boundaryQuote: "Alopex Data UI does not replace your database or UI libraries.",
     boundaryStrong: "It keeps them replaceable through shared application contracts.",
     components: "Compose the interface your data work needs", componentsLead: "Use focused components on their own, or combine them into complete exploration and operations surfaces.", componentLink: "VIEW COMPONENT",
-    example: "Bind the UI to a contract—not to a backend", exampleLead: "The same component tree works with databases, APIs, files, streams, and custom backends. Implement or select an adapter; the UI stays the same.",
+    example: "Keep backend details at the boundary", exampleLead: "Whether data arrives from AlopexDB, DuckDB, an API, a file, or an internal service, the component tree keeps the same shape. Only the boundary knows how the data is reached.",
     architecture: "A clean boundary between data and presentation", architectureBody: "Each backend connects at the data-source adapter layer. UI components depend on a stable contract, not database internals, transport protocols, or storage formats.",
     useCases: "Built for real data workflows", principles: "Open at every layer", roadmap: "Roadmap", roadmapLead: "Product direction, not a promise of fixed delivery dates.",
-    inProgress: "IN PROGRESS", planned: "PLANNED", cta: "Bring your data. Keep one experience.", ctaBody: "Connect AlopexDB, DuckDB, an API, a file, or your own backend—and give every source the same coherent interface model.", github: "View on GitHub", followRoadmap: "Follow the Roadmap", footer: "Data application components for any data source",
+    inProgress: "IN PROGRESS", planned: "PLANNED", cta: "Let the data move. Keep the product coherent.", ctaBody: "Build today without letting today’s backend choices determine tomorrow’s interface.", github: "View on GitHub", followRoadmap: "Follow the Roadmap", footer: "A consistent UI model for data applications",
   },
   ja: {
     nav: ["概要", "コンポーネント", "設計", "コード例", "ロードマップ"], lang: "EN", langHref: "/",
-    eyebrow: "あらゆるデータソースをつなぐ データアプリケーションUI",
-    hero: "どんなデータも、ひとつのUIへ。",
-    lead: "データベース、API、ファイル、ストリーム。接続先ごとの差はアダプターが吸収し、フォーム、グリッド、チャート、グラフ、地図へ、ひとつの作法でつなぎます。",
+    eyebrow: "データアプリケーションのための共通UIモデル",
+    hero: "変わるデータに、変わらない使い心地を。",
+    lead: "Alopex Data UIは、データの違いを画面に持ち込みません。フォーム、グリッド、チャート、グラフ、地図を、一貫したモデルで組み立てられます。",
     explore: "コンポーネントを見る", viewArchitecture: "設計を見る",
-    problem: "接続先の違いを、UIの都合にしない。",
-    problemBody: "クエリ、スキーマ変換、絞り込み、選択状態を特定の接続先へ直結すると、データの置き場所が変わるたびに画面まで作り直すことになります。Alopex Data UIは、その違いをアダプターへ閉じ込め、UIとの境界を安定させます。",
-    concept: "データソースが変わっても、画面の設計は変えない。",
-    conceptBody: "アダプターが、接続先ごとのスキーマ、クエリ、フィルター、選択状態、レコード編集を共通のDataSource契約へ変換します。AlopexDBもDuckDBも、APIもファイルも、独自バックエンドも、コンポーネントからは同じ作法で扱えます。",
+    problem: "データの違いまで、画面の違いにしない。",
+    problemBody: "クエリ、スキーマ変換、絞り込み、選択状態がバックエンドへ直結していると、基盤の判断がそのまま画面の制約になります。Alopex Data UIは、その複雑さを境界の内側へ収めます。",
+    concept: "つなぎ方の違いは、境界で整える。",
+    conceptBody: "アダプターが、スキーマ、クエリ、フィルター、選択状態、レコード編集を共通のDataSource契約へ変換します。コンポーネントはその契約だけを見て、接続先固有の処理は境界の内側に留めます。",
     boundary: "実績あるUIを活かし、データとの境界だけを整える。",
     existingTitle: "描画と操作は、成熟したライブラリに任せる",
     existingBody: "コントロール、仮想スクロール、チャート、地図、グラフ描画、エディターは、実績あるライブラリの強みをそのまま活用します。",
@@ -51,10 +51,10 @@ const copy: Record<Locale, PageCopy> = {
     boundaryQuote: "Alopex Data UIは、データベースもUIライブラリも置き換えません。",
     boundaryStrong: "両者を共通の契約でつなぎ、必要に応じて入れ替えられる状態をつくります。",
     components: "データ業務に必要な画面を、無理なく組み立てる。", componentsLead: "部品をひとつずつ使うことも、探索・編集・可視化をまとめた画面として使うこともできます。", componentLink: "詳しく見る",
-    example: "UIが見るのは、接続先ではなくDataSource契約。", exampleLead: "データベースでもAPIでも、ファイルでも独自バックエンドでも、コンポーネントの構成はそのまま。選ぶ、または実装するのは接続先に合ったアダプターだけです。",
-    architecture: "接続先と表示の責務を、はっきり分ける。", architectureBody: "データベース、API、ファイルなどの違いは、データソース・アダプター層で吸収します。UIコンポーネントが依存するのは、接続方式や保存形式ではなく、安定したDataSource契約です。",
+    example: "バックエンドの都合を、画面まで持ち込まない。", exampleLead: "AlopexDB、DuckDB、API、ファイル、社内サービス。データの届き方が違っても、コンポーネントの組み方は変わりません。違いを知るのは、境界だけです。",
+    architecture: "画面はUIの責務に、接続は境界の責務に。", architectureBody: "データベース、API、ファイルなどの違いは、データソース・アダプター層で吸収します。UIコンポーネントが依存するのは、接続方式や保存形式ではなく、安定したDataSource契約です。",
     useCases: "現場のデータ業務から逆算した使い方", principles: "どの層も、ひとつの選択肢に縛らない。", roadmap: "これから実現すること", roadmapLead: "ここに示すのは、確定した納期ではなく、製品開発の方向性です。",
-    inProgress: "開発中", planned: "計画中", cta: "データを選ばず、体験を揃える。", ctaBody: "AlopexDBもDuckDBも、APIもファイルも、独自のデータ基盤も。接続先が違っても、画面にはひとつのデータ体験を。", github: "GitHubで見る", followRoadmap: "ロードマップを見る", footer: "あらゆるデータソースをつなぐ、データアプリケーションUI",
+    inProgress: "開発中", planned: "計画中", cta: "データが変わっても、プロダクトの体験は変えない。", ctaBody: "いま選ぶバックエンドに、これから育てる画面を縛らせないために。", github: "GitHubで見る", followRoadmap: "ロードマップを見る", footer: "データの違いを、画面の違いにしないUI基盤",
   },
 };
 
@@ -92,8 +92,8 @@ const useCaseCopy = {
 };
 
 const principleCopy = {
-  en: [["FRAMEWORK-INDEPENDENT", "Use Web Components from React, Vue, Svelte, or vanilla JavaScript."], ["SOURCE-INDEPENDENT", "Connect databases, APIs, files, streams, and custom backends through one DataSource contract."], ["RENDERER-INDEPENDENT", "Change grid or chart engines without rewriting application state."], ["SCHEMA-DRIVEN", "Let schema information drive forms, filters, columns, and formats."], ["LARGE-DATA READY", "Use virtualization, Canvas, WebGL, and GPU engines where they perform best."]],
-  ja: [["フレームワークを選ばない", "Web Componentsを境界に、React、Vue、Svelte、Vanilla JavaScriptから利用できます。"], ["接続先を選ばない", "データベース、API、ファイル、ストリーム、独自バックエンドを、同じDataSource契約へ接続できます。"], ["描画エンジンを固定しない", "アプリケーション状態を作り直さず、グリッドやチャートの実装を選べます。"], ["スキーマを設計の起点に", "フォーム、フィルター、列、表示形式へ、スキーマ情報を一貫して反映します。"], ["大規模データを前提に", "仮想化、Canvas、WebGL、GPUを、得意な処理へ適切に使い分けます。"]],
+  en: [["FRAMEWORK-INDEPENDENT", "Use Web Components from React, Vue, Svelte, or vanilla JavaScript."], ["STABLE DATA BOUNDARY", "Keep backend-specific behavior behind the DataSource boundary."], ["RENDERER-INDEPENDENT", "Change grid or chart engines without rewriting application state."], ["SCHEMA-DRIVEN", "Let schema information drive forms, filters, columns, and formats."], ["LARGE-DATA READY", "Use virtualization, Canvas, WebGL, and GPU engines where they perform best."]],
+  ja: [["フレームワークを選ばない", "Web Componentsを境界に、React、Vue、Svelte、Vanilla JavaScriptから利用できます。"], ["違いは境界の内側へ", "接続先ごとの処理をDataSource境界の内側に収めます。"], ["描画エンジンを固定しない", "アプリケーション状態を作り直さず、グリッドやチャートの実装を選べます。"], ["スキーマを設計の起点に", "フォーム、フィルター、列、表示形式へ、スキーマ情報を一貫して反映します。"], ["大規模データを前提に", "仮想化、Canvas、WebGL、GPUを、得意な処理へ適切に使い分けます。"]],
 };
 
 const phaseCopy = {
@@ -126,16 +126,16 @@ export function LandingPage({ locale }: { locale: Locale }) {
         <div className="button-row"><a className="button primary" href="#components">{t.explore} <span>↓</span></a><a className="button ghost" href="#architecture">{t.viewArchitecture}</a></div>
         <div className="package-line"><span>$</span> npm install @alopex-data-ui/core</div>
       </div>
-      <div className="hero-console" aria-label={locale === "ja" ? "あらゆるデータソースを共通DataSourceへ接続するフロー図" : "Any data source connected through adapters to one DataSource contract"}>
+      <div className="hero-console" aria-label={locale === "ja" ? "複数の接続先を共通のデータ境界で束ねるフロー図" : "Multiple backends meeting one stable data boundary"}>
         <div className="console-bar"><span><i/><i/><i/></span><code>alopex-data-ui / data source adapters</code><b>READY</b></div>
-        <div className="flow-stage"><div className="engine-switch"><div className="db-node active"><Mark/><div><b>AlopexDB</b><small>DATABASE</small></div></div><span>OR</span><div className="db-node duck"><div className="duck-mark">D</div><div><b>DuckDB</b><small>ANALYTICS</small></div></div><span>OR</span><div className="db-node custom"><div className="source-mark">+</div><div><b>YOUR SOURCE</b><small>API / FILE / STREAM</small></div></div></div><div className="flow-line"><span>ADAPTER</span></div>
-          <div className="core-node"><small>STABLE DATASOURCE CONTRACT</small><strong>{locale === "ja" ? "接続先が変わっても、UIはそのまま" : "Change the source. Keep the UI."}</strong><div>{["DataSource", "Schema", "Filter", "Selection"].map(x => <em key={x}>{x}</em>)}</div></div><div className="fan-lines"/>
+        <div className="flow-stage"><div className="engine-switch"><div className="db-node active"><Mark/><div><b>AlopexDB</b><small>DATABASE</small></div></div><span>OR</span><div className="db-node duck"><div className="duck-mark">D</div><div><b>DuckDB</b><small>ANALYTICS</small></div></div><span>OR</span><div className="db-node custom"><div className="source-mark">+</div><div><b>CUSTOM</b><small>API / FILE / STREAM</small></div></div></div><div className="flow-line"><span>ADAPTER</span></div>
+          <div className="core-node"><small>STABLE DATASOURCE CONTRACT</small><strong>{locale === "ja" ? "違いは境界で整える" : "One contract. One UI."}</strong><div>{["DataSource", "Schema", "Filter", "Selection"].map(x => <em key={x}>{x}</em>)}</div></div><div className="fan-lines"/>
           <div className="ui-nodes">{["FORM", "GRID", "CHART", "GRAPH", "MAP"].map((x,i) => <div key={x}><span className={`glyph g${i}`}/>{x}</div>)}</div>
-        </div><div className="console-status"><span>source: any</span><span>adapter: extensible</span><span>contract: stable</span></div>
+        </div><div className="console-status"><span>boundary: stable</span><span>adapters: extensible</span><span>ui: coherent</span></div>
       </div>
     </section>
 
-    <section className="signal-strip five" aria-label="Product principles"><div><b>01</b> SOURCE INDEPENDENT</div><div><b>02</b> FRAMEWORK INDEPENDENT</div><div><b>03</b> RENDERER INDEPENDENT</div><div><b>04</b> SCHEMA DRIVEN</div><div><b>05</b> LARGE-DATA READY</div></section>
+    <section className="signal-strip five" aria-label="Product principles"><div><b>01</b> STABLE DATA BOUNDARY</div><div><b>02</b> FRAMEWORK INDEPENDENT</div><div><b>03</b> RENDERER INDEPENDENT</div><div><b>04</b> SCHEMA DRIVEN</div><div><b>05</b> LARGE-DATA READY</div></section>
 
     <section className="section shell problem" id="overview"><SectionIndex>{sectionLabels[0]}</SectionIndex><div className="problem-copy"><h2>{t.problem}</h2><p>{t.problemBody}</p></div>
       <div className="problem-grid">{problemItems[locale].map((item,i) => <div key={item}><span>{String(i+1).padStart(2,"0")}</span>{item}</div>)}</div>
@@ -162,7 +162,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
 
     <section className="section architecture-map"><div className="shell"><div className="section-heading split"><h2>{t.architecture}</h2><p>{t.architectureBody}</p></div><div className="layer-stack">
       {layers.map(([n,a,b],i)=><div key={n} className={i===3?"accent":""}><span>{n}</span><b>{a}</b><p>{b}</p></div>)}
-      <div className="db-adapter engine-card"><span className="engine-card-label">DATA SOURCES</span><div><b>AlopexDB</b><small>Built-in adapter</small></div><div><b>DuckDB</b><small>Built-in adapter</small></div><div><b>Any Source</b><small>Custom adapter</small></div><span>{locale === "ja" ? "すべて同じDataSource契約へ" : "One contract for every source"}</span></div></div></div></section>
+      <div className="db-adapter engine-card"><span className="engine-card-label">DATA SOURCES</span><div><b>AlopexDB</b><small>Built-in adapter</small></div><div><b>DuckDB</b><small>Built-in adapter</small></div><div><b>Custom Backend</b><small>Adapter</small></div><span>{locale === "ja" ? "接続先の違いは境界で吸収" : "Backend details stay at the boundary"}</span></div></div></div></section>
 
     <section className="section shell use-cases"><SectionIndex>{sectionLabels[5]}</SectionIndex><div className="section-heading"><h2>{t.useCases}</h2></div><div className="use-case-grid">{useCases.map(([name,desc],i)=><article key={name}><span className={`scene scene-${i}`}><i/><i/><i/><i/></span><div><small>0{i+1}</small><h3>{name}</h3><p>{desc}</p></div></article>)}</div></section>
 
