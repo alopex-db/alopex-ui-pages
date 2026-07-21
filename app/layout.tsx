@@ -11,14 +11,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
-  const image = new URL("/og-duckdb.png", origin).toString();
+  const image = new URL("/og-any-source.png", origin).toString();
   return {
     metadataBase: new URL(origin),
     title: "Alopex Data UI",
-    description: "Data Application Components for AlopexDB and DuckDB",
+    description: "Data Application Components for Any Data Source",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { type: "website", siteName: "Alopex Data UI", title: "Change the data engine. Keep the application model.", description: "One stable application model for AlopexDB and DuckDB.", images: [{ url: image, width: 1734, height: 907, alt: "Alopex Data UI with swappable AlopexDB and DuckDB adapters" }] },
-    twitter: { card: "summary_large_image", title: "Alopex Data UI", description: "Data Application Components for AlopexDB and DuckDB", images: [image] },
+    openGraph: { type: "website", siteName: "Alopex Data UI", title: "Connect any data source. Keep one application model.", description: "One stable DataSource contract for databases, APIs, files, streams, and custom backends.", images: [{ url: image, width: 1732, height: 908, alt: "Alopex Data UI connecting any data source through adapters" }] },
+    twitter: { card: "summary_large_image", title: "Alopex Data UI", description: "Data Application Components for Any Data Source", images: [image] },
   };
 }
 
