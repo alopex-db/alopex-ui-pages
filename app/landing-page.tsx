@@ -104,7 +104,7 @@ const phaseCopy = {
 function Mark({ small = false }: { small?: boolean }) { return <span className={small ? "mark small" : "mark"} aria-hidden="true"><i/><i/><i/></span>; }
 const SectionIndex = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => <div className={`section-index ${light ? "light" : ""}`}>{children}</div>;
 
-export function LandingPage({ locale }: { locale: Locale }) {
+export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePath?: string }) {
   const t = copy[locale];
   const components = componentCopy[locale];
   const useCases = useCaseCopy[locale];
@@ -118,7 +118,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Alopex Data UI home"><Mark small/><span>Alopex <b>Data UI</b></span></a>
       <nav aria-label="Main navigation">{t.nav.map((item, i) => <a href={ids[i]} key={item}>{item}</a>)}</nav>
-      <div className="header-actions"><a className="lang" href={t.langHref}>{t.lang}</a><a className="button mini" href={siteConfig.githubUrl}>GitHub <span>↗</span></a></div>
+      <div className="header-actions"><a className="lang" href={basePath + t.langHref}>{t.lang}</a><a className="button mini" href={siteConfig.githubUrl}>GitHub <span>↗</span></a></div>
     </header>
 
     <section className="hero-wrap" id="top">

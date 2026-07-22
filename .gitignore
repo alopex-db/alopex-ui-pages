@@ -40,3 +40,7 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# GitHub Pages build
+/pages-dist/
+/.pnpm-store/
