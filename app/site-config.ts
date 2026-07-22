@@ -1,5 +1,5 @@
 ﻿export const siteConfig = {
-  githubUrl: "https://github.com/asopi/alopex-data-ui",
-  repository: "alopex-data-ui",
+  githubUrl: "https://github.com/alopex-db/alopex-ui",
+  repository: "alopex-ui",
   packageScope: "@alopex-data-ui/*",
 };
