@@ -242,3 +242,9 @@ footer{background:#080a09}
   .architecture-step>div span{padding:7px}
   .architecture-engine-rail{min-height:0}
 }
+/* Explain the backend differences represented by each problem card. */
+.problem-grid article{min-height:190px;border:1px solid #dfe2dd;border-radius:10px;background:#fff;padding:20px;box-shadow:0 8px 24px rgba(17,24,21,.035);display:flex;flex-direction:column;align-items:flex-start}
+.problem-grid article>span{font:700 9px var(--mono);letter-spacing:.1em;color:var(--brand)}
+.problem-grid article h3{margin:28px 0 10px;font-size:16px;line-height:1.25;letter-spacing:-.015em}
+.problem-grid article p{margin:0;color:#69716c;font-size:12px;line-height:1.65}
+@media(max-width:600px){.problem-grid article{min-height:0}}

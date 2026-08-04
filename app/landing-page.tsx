@@ -59,9 +59,27 @@ const copy: Record<Locale, PageCopy> = {
 };
 
 const problemItems = {
-  en: ["Schema normalization", "Query translation", "Filter mapping", "Selection sync", "Column definitions", "Edit lifecycle", "Source adapters", "Shared UI states"],
-  ja: ["スキーマの共通化", "クエリの変換", "フィルターの受け渡し", "選択状態の同期", "列定義の生成", "編集処理の管理", "接続先別アダプター", "共通の画面状態"],
-};
+  en: [
+    ["Schema normalization", "Normalize field types, names, relationships, and metadata into one shared schema."],
+    ["Query translation", "Turn one query intent into backend-specific SQL, API requests, or file operations."],
+    ["Filter mapping", "Use one typed filter across grids, charts, maps, and every connected data source."],
+    ["Selection sync", "Share selected rows, ranges, nodes, and map features across every view."],
+    ["Column definitions", "Generate columns, formats, sorting, and edit rules directly from schema."],
+    ["Edit lifecycle", "Standardize validation, optimistic state, saving, conflicts, and error recovery."],
+    ["Source adapters", "Keep database, API, and file-specific behavior behind the DataSource boundary."],
+    ["Shared UI states", "Carry filters, time range, variables, focus, and drill-down context across the application."],
+  ],
+  ja: [
+    ["スキーマの共通化", "型、フィールド名、関係、メタデータを、接続先に依存しない共通スキーマへ揃えます。"],
+    ["クエリの変換", "ひとつの検索意図を、接続先ごとのSQL、APIリクエスト、ファイル操作へ変換します。"],
+    ["フィルターの受け渡し", "型のある同じフィルターを、Grid、Chart、Map、各DataSourceで共有します。"],
+    ["選択状態の同期", "選択した行、範囲、ノード、地物を、すべての表示部品へ同期します。"],
+    ["列定義の生成", "列、表示形式、並べ替え、編集ルールを、スキーマから一貫して生成します。"],
+    ["編集処理の管理", "検証、楽観的更新、保存、競合、エラー復旧までを同じ流れで扱います。"],
+    ["接続先別アダプター", "Database、API、File固有の処理をDataSource境界の内側へ閉じ込めます。"],
+    ["共通の画面状態", "Filter、Time Range、Variables、Focus、Drill-downをApplication全体で共有します。"],
+  ],
+} as const;
 
 const componentCopy = {
   en: [
@@ -186,7 +204,7 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
     <section className="signal-strip five" aria-label="Product principles"><div><b>01</b> STABLE DATA BOUNDARY</div><div><b>02</b> FRAMEWORK INDEPENDENT</div><div><b>03</b> RENDERER INDEPENDENT</div><div><b>04</b> SCHEMA DRIVEN</div><div><b>05</b> LARGE-DATA READY</div></section>
 
     <section className="section shell problem" id="overview"><SectionIndex>{sectionLabels[0]}</SectionIndex><div className="problem-copy"><h2>{t.problem}</h2><p>{t.problemBody}</p></div>
-      <div className="problem-grid">{problemItems[locale].map((item,i) => <div key={item}><span>{String(i+1).padStart(2,"0")}</span>{item}</div>)}</div>
+      <div className="problem-grid">{problemItems[locale].map(([title, description],i) => <article key={title}><span>{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
     </section>
 
     <section className="section concept" id="architecture"><div className="shell"><SectionIndex light>{sectionLabels[1]}</SectionIndex><div className="section-heading split"><h2>{t.concept}</h2><p>{t.conceptBody}</p></div>
