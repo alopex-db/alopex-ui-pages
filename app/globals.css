@@ -143,12 +143,22 @@ body{background:#f6f6f2}
 .final-cta{background:radial-gradient(circle at 50% -10%,rgba(36,212,192,.17),transparent 42%),#0d110f}
 footer{background:#080a09}
 
+.framework-intro{margin-top:82px;padding-top:54px;border-top:1px solid #343b38;display:grid;grid-template-columns:1fr 1fr;gap:18px 64px;align-items:start}
+.framework-intro>span{grid-column:1/-1;font:700 9px var(--mono);letter-spacing:.16em;color:var(--teal)}
+.framework-intro h3{font-size:clamp(34px,4vw,55px);letter-spacing:-.045em;line-height:1.03;margin:0;color:#fff;text-wrap:balance}
+.framework-intro p{margin:4px 0 0;color:#98a29d;font-size:15px;line-height:1.75;max-width:540px}
+.framework-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}
+.framework-grid article{min-height:210px;border:1px solid #35403b;border-radius:12px;background:linear-gradient(145deg,#171d1a,#111513);padding:25px;position:relative;overflow:hidden}
+.framework-grid article:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-42px;bottom:-50px;background:radial-gradient(circle,rgba(36,212,192,.12),transparent 68%)}
+.framework-grid article>span{font:700 8px var(--mono);color:var(--brand);letter-spacing:.12em}
+.framework-grid article h3{font-size:18px;margin:34px 0 12px;color:#f0f4f2}
+.framework-grid article p{font-size:12px;line-height:1.65;color:#8f9994;margin:0}
 @media(max-width:1180px){
   .hero{grid-template-columns:1fr;gap:54px;min-height:auto}
   .hero-copy{max-width:760px}
   .data-landscape{max-width:900px}
 }
-@media(max-width:900px){
+@media(max-width:900px){.framework-intro{grid-template-columns:1fr}.framework-grid{grid-template-columns:1fr 1fr}
   .hero{padding-block:72px}
   .landscape-body{min-width:760px}
   .data-landscape{overflow-x:auto}
@@ -156,7 +166,7 @@ footer{background:#080a09}
   .component-grid{gap:10px}
   .boundary-grid{grid-template-columns:1fr}
 }
-@media(max-width:600px){
+@media(max-width:600px){.framework-intro{margin-top:58px;padding-top:38px}.framework-grid{grid-template-columns:1fr}.framework-grid article{min-height:0}
   .hero-wrap{background:radial-gradient(circle at 70% 48%,rgba(36,212,192,.08),transparent 34%),#0c100f}
   .hero{padding-block:52px;gap:42px}
   .hero h1{font-size:46px}

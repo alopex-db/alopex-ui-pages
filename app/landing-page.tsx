@@ -86,6 +86,41 @@ const componentCopy = {
   ],
 } as const;
 
+const dashboardFrameworkCopy = {
+  en: {
+    eyebrow: "DASHBOARD APPLICATION FRAMEWORK",
+    title: "From data components to a complete application runtime",
+    body: "Grafana-class dashboard UX needs more than another chart. Alopex Data UI adds a shared runtime for querying, transforming, composing, saving, and reusing interactive data applications.",
+    items: [
+      ["Panel", "The execution unit that brings queries, transforms, visualization settings, links, and interaction state together."],
+      ["Dashboard Canvas", "A persistent authoring canvas for dragging, resizing, grouping, and arranging panels."],
+      ["Query Runner", "A shared runtime for execution, cancellation, caching, streaming, retries, and query status."],
+      ["Data Frame", "A columnar result model shared by charts, tables, maps, graphs, logs, and traces."],
+      ["Transformation Pipeline", "Compose filters, joins, groups, calculations, pivots, sorting, and time alignment before rendering."],
+      ["Time Range", "Share time range, timezone, zoom, and auto-refresh across an entire dashboard."],
+      ["Dashboard Variables", "Drive queries, titles, links, filters, and repeated panels from reusable variables."],
+      ["Visualization Registry", "Register and exchange charts, tables, logs, traces, maps, and graph renderers as plugins."],
+      ["Dashboard Library", "Save, share, version, import, export, and reuse dashboards, panels, and templates."],
+    ],
+  },
+  ja: {
+    eyebrow: "DASHBOARD APPLICATION FRAMEWORK",
+    title: "部品の集合から、データアプリケーションの実行基盤へ。",
+    body: "Grafana相当のダッシュボード体験に必要なのは、チャートの追加ではありません。クエリ、変換、配置、保存、再利用を一貫して扱う共通ランタイムを、Alopex Data UIの正式な製品スコープとして加えます。",
+    items: [
+      ["Panel", "クエリ、変換、表示設定、可視化、リンク、操作状態をまとめる基本実行単位。"],
+      ["Dashboard Canvas", "Panelをドラッグ、リサイズ、グループ化し、配置を保存できる編集キャンバス。"],
+      ["Query Runner", "実行、キャンセル、キャッシュ、ストリーミング、再試行、状態管理を共通化。"],
+      ["Data Frame", "チャート、表、地図、グラフ、ログ、トレースで共有できる列指向の結果モデル。"],
+      ["Transformation Pipeline", "フィルター、結合、集約、計算、ピボット、並べ替え、時間整列を表示前に構成。"],
+      ["Time Range", "時間範囲、タイムゾーン、ズーム、自動更新をDashboard全体へ共有。"],
+      ["Dashboard Variables", "クエリ、タイトル、リンク、フィルター、Panelの繰り返しを動的に制御。"],
+      ["Visualization Registry", "チャート、表、ログ、トレース、地図、グラフをプラグインとして登録・交換。"],
+      ["Dashboard Library", "Dashboard、Panel、テンプレートを保存、共有、履歴管理、再利用。"],
+    ],
+  },
+} as const;
+
 const useCaseCopy = {
   en: [["Data Explorer", "Search, filter, compare, and visualize large datasets."], ["Operational Dashboard", "Bring forms, live lists, charts, and status views into one operational surface."], ["Graph Explorer", "Explore connected data and knowledge graphs at scale."], ["Database Studio", "Inspect schemas and query results, then edit records without changing UI conventions."]],
   ja: [["データ探索", "大量データを検索・絞り込み・比較し、必要な切り口ですぐ可視化します。"], ["業務ダッシュボード", "入力、一覧、チャート、進捗表示を、日々の業務に合うひとつの画面へまとめます。"], ["関係データの探索", "つながりの多いデータやナレッジグラフを、規模を問わずたどれます。"], ["データベース管理画面", "スキーマとクエリ結果を確認し、同じ操作体系のままレコードを編集します。"]],
@@ -97,8 +132,8 @@ const principleCopy = {
 };
 
 const phaseCopy = {
-  en: [["01", "Core contracts", "DataSource · Schema · Filter · Selection · Record editing · Built-in Adapters · Custom Adapter API"], ["02", "Exploration", "Filter Builder · Data Grid · Data Chart · Data Pivot · Data Explorer"], ["03", "Spatial & connected", "Data Map · Data Graph · Timeline · Log Viewer · Visualization Workspace"], ["04", "Application systems", "Dashboard components · Master-detail layouts · Plugin system · Alopex Studio integration"]],
-  ja: [["01", "共通契約を固める", "DataSource · Schema · Filter · Selection · Record Editing · Built-in Adapters · Custom Adapter API"], ["02", "探索機能を揃える", "Filter Builder · Data Grid · Data Chart · Data Pivot · Data Explorer"], ["03", "空間・関係・時系列へ広げる", "Data Map · Data Graph · Timeline · Log Viewer · Visualization Workspace"], ["04", "業務アプリの基盤へ育てる", "Dashboard Components · Master-detail Layouts · Plugin System · Alopex Studio Integration"]],
+  en: [["01", "Core contracts", "DataSource · Schema · Filter · Selection · Record editing · Built-in Adapters · Custom Adapter API"], ["02", "Exploration", "Filter Builder · Data Grid · Data Chart · Data Pivot · Data Explorer"], ["03", "Spatial & connected", "Data Map · Data Graph · Timeline · Log Viewer · Visualization Workspace"], ["04", "Dashboard Runtime", "Panel Model · DataFrame & Field Configuration · Query Runner · Transformation Pipeline · Time Range · Variables · Dashboard Document"], ["05", "Dashboard Authoring", "Dashboard Canvas · Panel Editor · Visualization Registry · Links & Drill-down · Annotations · Library Panels · Version History · Import / Export"], ["06", "Observability", "Time Series · Logs · Trace Waterfall · Service Map · Alert Views · SLO Views · Alopex OTel Integration"], ["07", "Application Studio", "Master-detail · Operational Actions · Record Editing Panels · Plugin System · Alopex Studio · AI-assisted Composition"]],
+  ja: [["01", "共通契約を固める", "DataSource · Schema · Filter · Selection · Record Editing · Built-in Adapters · Custom Adapter API"], ["02", "探索機能を揃える", "Filter Builder · Data Grid · Data Chart · Data Pivot · Data Explorer"], ["03", "空間・関係・時系列へ広げる", "Data Map · Data Graph · Timeline · Log Viewer · Visualization Workspace"], ["04", "Dashboard Runtime", "Panel Model · DataFrame & Field Configuration · Query Runner · Transformation Pipeline · Time Range · Variables · Dashboard Document"], ["05", "Dashboard Authoring", "Dashboard Canvas · Panel Editor · Visualization Registry · Links & Drill-down · Annotations · Library Panels · Version History · Import / Export"], ["06", "Observability", "Time Series · Logs · Trace Waterfall · Service Map · Alert Views · SLO Views · Alopex OTel Integration"], ["07", "Application Studio", "Master-detail · Operational Actions · Record Editing Panels · Plugin System · Alopex Studio · AI-assisted Composition"]],
 };
 
 function Mark({ small = false }: { small?: boolean }) { return <span className={small ? "mark small" : "mark"} aria-hidden="true"><i/><i/><i/></span>; }
@@ -110,9 +145,10 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
   const useCases = useCaseCopy[locale];
   const principles = principleCopy[locale];
   const phases = phaseCopy[locale];
+  const dashboardFramework = dashboardFrameworkCopy[locale];
   const ids = ["#overview", "#components", "#architecture", "#examples", "#roadmap"];
   const sectionLabels = locale === "ja" ? ["01 / 課題", "02 / 共通モデル", "03 / 境界", "04 / コンポーネント", "05 / コード例", "06 / ユースケース", "07 / ロードマップ"] : ["01 / THE PROBLEM", "02 / THE MODEL", "03 / THE BOUNDARY", "04 / COMPONENTS", "05 / COMPOSITION", "06 / USE CASES", "07 / ROADMAP"];
-  const layers = locale === "ja" ? [["06","APPLICATION","あなたのプロダクト"],["05","APPLICATION COMPONENTS","Data Explorer / Record Editor / Master Detail"],["04","DATA COMPONENTS","Grid / Chart / Pivot / Map / Graph"],["03","UI CORE","DataSource / Schema / Filter / Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","データ処理・描画・操作を担う既存エンジン"]] : [["06","APPLICATION","Your product"],["05","APPLICATION COMPONENTS","Data Explorer / Record Editor / Master Detail"],["04","DATA COMPONENTS","Grid / Chart / Pivot / Map / Graph"],["03","UI CORE","DataSource / Schema / Filter / Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","Data, rendering, and interaction engines"]];
+  const layers = locale === "ja" ? [["06","APPLICATION / STUDIO","業務アプリケーションとAlopex Studio"],["05","DASHBOARD / WORKSPACE","Dashboard · Explorer · Grid · Map · Graph · Editor"],["04","PANEL RUNTIME","Query · Transform · Visualization · Interaction"],["03","DATA MODEL","DataFrame · Schema · Filter · Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","データ処理・描画・操作を担う既存エンジン"]] : [["06","APPLICATION / STUDIO","Your product and Alopex Studio"],["05","DASHBOARD / WORKSPACE","Dashboard · Explorer · Grid · Map · Graph · Editor"],["04","PANEL RUNTIME","Query · Transform · Visualization · Interaction"],["03","DATA MODEL","DataFrame · Schema · Filter · Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","Data, rendering, and interaction engines"]];
 
   return <main lang={locale} className="site">
     <header className="site-header">
@@ -183,6 +219,8 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
 
     <section className="section components" id="components"><div className="shell"><SectionIndex light>{sectionLabels[3]}</SectionIndex><div className="section-heading split"><h2>{t.components}</h2><p>{t.componentsLead}</p></div>
       <div className="component-grid">{components.map(([name,desc,icon],i)=><article key={name}><div className={`component-icon ${icon}`}><span/><span/><span/></div><span className="component-number">0{i+1}</span><h3>{name}</h3><p>{desc}</p><a href="#examples">{t.componentLink} <span>↗</span></a></article>)}</div>
+      <div className="framework-intro"><span>{dashboardFramework.eyebrow}</span><h3>{dashboardFramework.title}</h3><p>{dashboardFramework.body}</p></div>
+      <div className="framework-grid">{dashboardFramework.items.map(([name,desc],i)=><article key={name}><span>{String(i+1).padStart(2,"0")}</span><h3>{name}</h3><p>{desc}</p></article>)}</div>
     </div></section>
 
     <section className="section shell examples" id="examples"><SectionIndex>{sectionLabels[4]}</SectionIndex><div className="section-heading split"><h2>{t.example}</h2><p>{t.exampleLead}</p></div>
@@ -190,7 +228,7 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
     </section>
 
     <section className="section architecture-map"><div className="shell"><div className="section-heading split"><h2>{t.architecture}</h2><p>{t.architectureBody}</p></div><div className="layer-stack">
-      {layers.map(([n,a,b],i)=><div key={n} className={i===3?"accent":""}><span>{n}</span><b>{a}</b><p>{b}</p></div>)}
+      {layers.map(([n,a,b],i)=><div key={n} className={i===2||i===3?"accent":""}><span>{n}</span><b>{a}</b><p>{b}</p></div>)}
       <div className="db-adapter engine-card"><span className="engine-card-label">DATA SOURCES</span><div><b>AlopexDB</b><small>Built-in adapter</small></div><div><b>DuckDB</b><small>Built-in adapter</small></div><div><b>Custom Backend</b><small>Adapter</small></div><span>{locale === "ja" ? "接続先の違いは境界で吸収" : "Backend details stay at the boundary"}</span></div></div></div></section>
 
     <section className="section shell use-cases"><SectionIndex>{sectionLabels[5]}</SectionIndex><div className="section-heading"><h2>{t.useCases}</h2></div><div className="use-case-grid">{useCases.map(([name,desc],i)=><article key={name}><span className={`scene scene-${i}`}><i/><i/><i/><i/></span><div><small>0{i+1}</small><h3>{name}</h3><p>{desc}</p></div></article>)}</div></section>
