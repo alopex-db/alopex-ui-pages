@@ -248,3 +248,13 @@ footer{background:#080a09}
 .problem-grid article h3{margin:28px 0 10px;font-size:16px;line-height:1.25;letter-spacing:-.015em}
 .problem-grid article p{margin:0;color:#69716c;font-size:12px;line-height:1.65}
 @media(max-width:600px){.problem-grid article{min-height:0}}
+/* The boundary includes both data contracts and the dashboard application runtime. */
+.alopex-capability-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;margin-top:28px}
+.alopex-capability-grid section{min-width:0}
+.alopex-capability-grid small{display:block;margin-bottom:16px;font:700 8px var(--mono);letter-spacing:.13em;color:#717a75}
+.alopex-capability-grid .runtime-capability{border-left:2px solid var(--brand);padding-left:22px}
+.alopex-capability-grid .runtime-capability small{color:var(--brand)}
+.alopex-layer .alopex-capability-grid ul{grid-template-columns:1fr;margin:0;gap:9px}
+.framework-intro.framework-first{margin-top:0;padding-top:0;border-top:0}
+.component-intro{margin-top:92px;padding-top:58px;border-top:1px solid #343b38}
+@media(max-width:600px){.alopex-capability-grid{grid-template-columns:1fr}.alopex-capability-grid .runtime-capability{border-left:0;border-top:2px solid var(--brand);padding:20px 0 0}.component-intro{margin-top:64px;padding-top:42px}}

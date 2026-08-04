@@ -22,12 +22,12 @@ const copy: Record<Locale, PageCopy> = {
     problemBody: "When queries, schema conversion, filters, and selection state are tied directly to a backend, infrastructure decisions spill into the product. Alopex Data UI keeps that complexity at the boundary.",
     concept: "Different backends. One way of building.",
     conceptBody: "Adapters translate schema, queries, filters, selections, and editable records into one DataSource contract. Components work with that contract, while backend-specific behavior stays behind the boundary.",
-    boundary: "Proven UI engines. A stable data boundary.",
+    boundary: "A stable data boundary. A shared application runtime.",
     existingTitle: "Rendering and interaction engines",
     existingBody: "Rendering, controls, virtualization, charts, maps, graph layouts, and editors stay with mature libraries.",
-    layerTitle: "The data-application layer",
+    layerTitle: "Data boundary + dashboard runtime",
     boundaryQuote: "Alopex Data UI does not replace your database or UI libraries.",
-    boundaryStrong: "It keeps them replaceable through shared application contracts.",
+    boundaryStrong: "It standardizes both data access and application execution, while keeping databases and rendering engines replaceable.",
     components: "Compose the interface your data work needs", componentsLead: "Use focused components on their own, or combine them into complete exploration and operations surfaces.", componentLink: "VIEW COMPONENT",
     example: "Keep backend details at the boundary", exampleLead: "Whether data arrives from AlopexDB, DuckDB, an API, a file, or an internal service, the component tree keeps the same shape. Only the boundary knows how the data is reached.",
     architecture: "A clean boundary between data and presentation", architectureBody: "Each backend connects at the data-source adapter layer. UI components depend on a stable contract, not database internals, transport protocols, or storage formats.",
@@ -44,12 +44,12 @@ const copy: Record<Locale, PageCopy> = {
     problemBody: "クエリ、スキーマ変換、絞り込み、選択状態がバックエンドへ直結していると、基盤の判断がそのまま画面の制約になります。Alopex Data UIは、その複雑さを境界の内側へ収めます。",
     concept: "つなぎ方の違いは、境界で整える。",
     conceptBody: "アダプターが、スキーマ、クエリ、フィルター、選択状態、レコード編集を共通のDataSource契約へ変換します。コンポーネントはその契約だけを見て、接続先固有の処理は境界の内側に留めます。",
-    boundary: "実績あるUIを活かし、データとの境界だけを整える。",
+    boundary: "データ境界を揃え、アプリケーションの実行基盤まで共有する。",
     existingTitle: "描画と操作は、成熟したライブラリに任せる",
     existingBody: "コントロール、仮想スクロール、チャート、地図、グラフ描画、エディターは、実績あるライブラリの強みをそのまま活用します。",
-    layerTitle: "Alopex Data UIが担う領域",
+    layerTitle: "Data Boundary + Dashboard Runtime",
     boundaryQuote: "Alopex Data UIは、データベースもUIライブラリも置き換えません。",
-    boundaryStrong: "両者を共通の契約でつなぎ、必要に応じて入れ替えられる状態をつくります。",
+    boundaryStrong: "データアクセスだけでなく、クエリ実行、変換、Panel、状態、レイアウト、保存までを共通化し、データベースと描画エンジンは交換可能に保ちます。",
     components: "データ業務に必要な画面を、無理なく組み立てる。", componentsLead: "部品をひとつずつ使うことも、探索・編集・可視化をまとめた画面として使うこともできます。", componentLink: "詳しく見る",
     example: "バックエンドの都合を、画面まで持ち込まない。", exampleLead: "AlopexDB、DuckDB、API、ファイル、社内サービス。データの届き方が違っても、コンポーネントの組み方は変わりません。違いを知るのは、境界だけです。",
     architecture: "画面はUIの責務に、接続は境界の責務に。", architectureBody: "データベース、API、ファイルなどの違いは、データソース・アダプター層で吸収します。UIコンポーネントが依存するのは、接続方式や保存形式ではなく、安定したDataSource契約です。",
@@ -214,14 +214,15 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
 
     <section className="section shell boundary"><SectionIndex>{sectionLabels[2]}</SectionIndex><div className="section-heading"><h2>{t.boundary}</h2></div>
       <div className="boundary-grid"><article className="existing"><header><span>PROVEN LIBRARIES</span><b>{t.existingTitle}</b></header><div className="tag-cloud">{["Lit","Vaadin","RevoGrid","AG Grid","Apache ECharts","Perspective","deck.gl","MapLibre GL","cosmos.gl","CodeMirror","Dockview"].map(x=><span key={x}>{x}</span>)}</div><p>{t.existingBody}</p></article>
-        <div className="boundary-arrow">→</div><article className="alopex-layer"><header><span>ALOPEX DATA UI</span><b>{t.layerTitle}</b></header><ul>{["DataSource contract","Schema model","Filter AST","Selection model","Record editing","Grid & chart adapters","Shared UI states","Data Explorer","Built-in source adapters","Custom adapter API"].map(x=><li key={x}>{x}</li>)}</ul></article></div>
+        <div className="boundary-arrow">→</div><article className="alopex-layer"><header><span>ALOPEX DATA UI</span><b>{t.layerTitle}</b></header><div className="alopex-capability-grid"><section><small>DATA BOUNDARY</small><ul>{["DataSource contract","Schema model","Filter AST","Selection model","Record editing","Source adapters","Renderer adapters"].map(x=><li key={x}>{x}</li>)}</ul></section><section className="runtime-capability"><small>DASHBOARD APPLICATION RUNTIME</small><ul>{["Query Runner","DataFrame & transforms","Panel model","Time range & variables","Dashboard document","Canvas & layout","Visualization registry","Library & versioning"].map(x=><li key={x}>{x}</li>)}</ul></section></div></article></div>
       <blockquote>{t.boundaryQuote}<strong>{t.boundaryStrong}</strong></blockquote>
     </section>
 
-    <section className="section components" id="components"><div className="shell"><SectionIndex light>{sectionLabels[3]}</SectionIndex><div className="section-heading split"><h2>{t.components}</h2><p>{t.componentsLead}</p></div>
-      <div className="component-grid">{components.map(([name,desc,icon],i)=><article key={name}><div className={`component-icon ${icon}`}><span/><span/><span/></div><span className="component-number">0{i+1}</span><h3>{name}</h3><p>{desc}</p><a href="#examples">{t.componentLink} <span>↗</span></a></article>)}</div>
-      <div className="framework-intro"><span>{dashboardFramework.eyebrow}</span><h3>{dashboardFramework.title}</h3><p>{dashboardFramework.body}</p></div>
+    <section className="section components" id="components"><div className="shell"><SectionIndex light>{sectionLabels[3]}</SectionIndex>
+      <div className="framework-intro framework-first"><span>{dashboardFramework.eyebrow}</span><h3>{dashboardFramework.title}</h3><p>{dashboardFramework.body}</p></div>
       <div className="framework-grid">{dashboardFramework.items.map(([name,desc],i)=><article key={name}><span>{String(i+1).padStart(2,"0")}</span><h3>{name}</h3><p>{desc}</p></article>)}</div>
+      <div className="section-heading split component-intro"><h2>{t.components}</h2><p>{t.componentsLead}</p></div>
+      <div className="component-grid">{components.map(([name,desc,icon],i)=><article key={name}><div className={`component-icon ${icon}`}><span/><span/><span/></div><span className="component-number">0{i+1}</span><h3>{name}</h3><p>{desc}</p><a href="#examples">{t.componentLink} <span>↗</span></a></article>)}</div>
     </div></section>
 
     <section className="section shell examples" id="examples"><SectionIndex>{sectionLabels[4]}</SectionIndex><div className="section-heading split"><h2>{t.example}</h2><p>{t.exampleLead}</p></div>
