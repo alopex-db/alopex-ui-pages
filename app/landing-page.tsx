@@ -164,39 +164,22 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
           <div className="package-line"><span>$</span> npm install @alopex-data-ui/core</div>
         </div>
 
-        <div className="data-landscape" aria-label={locale === "ja" ? "複数の接続先と一貫したデータアプリケーション画面" : "Multiple backends feeding one coherent data application interface"}>
-          <div className="landscape-header"><span><i/><i/><i/></span><code>alopex-data-ui / workspace</code><b>LIVE</b></div>
-          <div className="landscape-body">
-            <div className="source-stack"><small>BACKENDS</small>
-              {[["DATABASE","AlopexDB"],["ANALYTICS","DuckDB"],["API","REST / GraphQL"],["FILES","CSV / Parquet"]].map(([name,detail],i)=><div className={"source-item tone-" + i} key={name}><i/><span><b>{name}</b><em>{detail}</em></span></div>)}
-            </div>
-            <div className="landscape-flow inbound"><span>ADAPTER</span></div>
-
-            <div className="workspace-shell">
-              <div className="workspace-titlebar"><div><span>Orders</span><small>DATA EXPLORER</small></div><b>● CONNECTED</b></div>
-              <div className="workspace-filters"><span>Region <b>All</b></span><span>Status <b>Active</b></span><span>Period <b>Q3</b></span></div>
-              <div className="workspace-kpis">
-                <div><small>REVENUE</small><b>$842K</b><em>+12.4%</em></div>
-                <div><small>ORDERS</small><b>12,480</b><em>+8.1%</em></div>
-                <div><small>AVG. VALUE</small><b>$67.50</b><em>+3.7%</em></div>
-              </div>
-              <div className="workspace-main">
-                <div className="workspace-table">
-                  <div className="table-row table-head"><span>REGION</span><span>ORDERS</span><span>REVENUE</span></div>
-                  {[["APAC","4,820","$324K"],["North America","3,940","$286K"],["Europe","2,760","$174K"],["Other","960","$58K"]].map(row=><div className="table-row" key={row[0]}>{row.map(cell=><span key={cell}>{cell}</span>)}</div>)}
-                </div>
-                <div className="workspace-chart"><div className="chart-label"><span>Revenue</span><b>LAST 6 MONTHS</b></div><div className="bars">{[42,65,54,78,69,92].map((height,i)=><i key={i} style={{height: height + "%"}}/>)}</div></div>
-              </div>
-              <div className="workspace-footer"><span>DataSource / Schema / Filter / Selection</span><b>BOUNDARY STABLE</b></div>
-            </div>
-
-            <div className="landscape-flow outbound"><span>UI</span></div>
-            <div className="output-stack"><small>SURFACES</small>
-              {["FORM","GRID","CHART","GRAPH","MAP"].map((name,i)=><div key={name}><span className={"glyph g" + i}/><b>{name}</b></div>)}
-            </div>
+        <div className="data-landscape architecture-landscape" aria-label={locale === "ja" ? "Alopex Data UIのアプリケーションアーキテクチャ" : "Alopex Data UI application architecture"}>
+          <div className="landscape-header"><span><i/><i/><i/></span><code>alopex-data-ui / application architecture</code><b>DASHBOARD FRAMEWORK</b></div>
+          <div className="architecture-flow">
+            {[
+              ["01", "DATA SOURCES", "BOUNDARY", ["AlopexDB", "DuckDB", "API / Files", "Custom"]],
+              ["02", "DATA MODEL", "SHARED CONTRACT", ["DataSource", "DataFrame", "Schema / Filter", "Selection"]],
+              ["03", "QUERY + CONTEXT", "RUNTIME", ["Query Runner", "Transform Pipeline", "Time Range", "Variables"]],
+              ["04", "PANEL RUNTIME", "EXECUTION UNIT", ["Panel Model", "Field Config", "Visualization", "Links / Actions"]],
+              ["05", "DASHBOARD / STUDIO", "APPLICATION", ["Dashboard Canvas", "Workspace", "Library / History", "Alopex Studio"]],
+            ].map(([n,title,label,items],i)=><div className="architecture-step-wrap" key={String(title)}>
+              <article className={`architecture-step step-${i+1}`}><header><span>{String(n)}</span><small>{String(label)}</small></header><h3>{String(title)}</h3><div>{(items as string[]).map(item=><span key={item}>{item}</span>)}</div></article>
+              {i<4&&<div className="architecture-connector" aria-hidden="true"><i/><b>→</b></div>}
+            </div>)}
           </div>
-          <div className="landscape-status"><span>backend details stay at the boundary</span><span>one coherent interaction model</span></div>
-        </div>
+          <div className="architecture-engine-rail"><span>RENDERER ADAPTERS + PROVEN ENGINES</span><div>{["RevoGrid", "ECharts", "Perspective", "deck.gl", "cosmos.gl", "CodeMirror"].map(item=><b key={item}>{item}</b>)}</div></div>
+          <div className="landscape-status"><span>DataSource → DataFrame → Query / Transform → Panel → Dashboard</span><span>one coherent application context</span></div>        </div>
       </div>
     </section>
 
