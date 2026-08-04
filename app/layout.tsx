@@ -15,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(origin),
     title: "Alopex Data UI",
-    description: "A Consistent Model for Data Applications",
+    description: "A Framework for Coherent Data Applications",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { type: "website", siteName: "Alopex Data UI", title: "One interface, wherever the data moves.", description: "Keep backend details at the boundary and build every data experience on one coherent interface model.", images: [{ url: image, width: 1734, height: 907, alt: "Alopex Data UI keeping backend details behind one stable boundary" }] },
-    twitter: { card: "summary_large_image", title: "Alopex Data UI", description: "A Consistent Model for Data Applications", images: [image] },
+    openGraph: { type: "website", siteName: "Alopex Data UI", title: "One interface, wherever the data moves.", description: "Keep backend details at the boundary and unify data, queries, panels, dashboards, and editing in one application framework.", images: [{ url: image, width: 1734, height: 907, alt: "Alopex Data UI keeping backend details behind one stable boundary" }] },
+    twitter: { card: "summary_large_image", title: "Alopex Data UI", description: "A Framework for Coherent Data Applications", images: [image] },
   };
 }
 
