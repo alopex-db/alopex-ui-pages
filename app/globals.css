@@ -207,3 +207,38 @@ footer{background:#080a09}
 /* Architecture visual must not inherit the former dashboard preview minimum width. */
 @media(max-width:900px){.architecture-landscape{overflow:hidden!important}.architecture-landscape .landscape-header,.architecture-landscape .landscape-status{min-width:0!important}}
 @media(max-width:600px){.architecture-landscape .landscape-header{height:auto;min-height:44px}.architecture-landscape .landscape-header code{max-width:none!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:anywhere;line-height:1.35}}
+/* Rebalance the full first viewport after promoting the architecture visual. */
+@media(min-width:901px){
+  .hero{gap:48px;padding-block:70px}
+  .hero-copy{max-width:none;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);column-gap:76px;align-items:start}
+  .hero-copy .eyebrow{grid-column:1/-1;margin-bottom:36px}
+  .hero-copy h1{grid-column:1;grid-row:2/6;align-self:start;max-width:700px;margin:0}
+  .hero-copy .hero-lead{grid-column:2;grid-row:2;margin:2px 0 26px;max-width:none}
+  .hero-copy .button-row{grid-column:2;grid-row:3;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 19px}
+  .hero-copy .button{min-width:0;padding-inline:14px;text-align:center}
+  .hero-copy .package-line{grid-column:2;grid-row:4;margin:0;padding-top:19px}
+  .architecture-flow{box-sizing:border-box;min-height:300px;padding-block:24px}
+  .architecture-step{min-height:218px}
+  .architecture-step h3{margin-block:17px 13px}
+}
+@media(max-width:900px){.hero-copy{max-width:none}.hero{gap:46px}.architecture-flow{min-height:0}}
+/* Intermediate and mobile composition for the full hero. */
+@media(max-width:1180px){.architecture-landscape{max-width:none!important}}
+@media(max-width:1100px) and (min-width:701px){
+  .architecture-flow{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;min-height:0;padding:20px}
+  .architecture-step-wrap,.architecture-step-wrap:last-child{display:block;grid-column:auto}
+  .architecture-connector{display:none}
+  .architecture-step{min-height:218px}
+  .architecture-step>div{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .architecture-flow{grid-template-columns:1fr;gap:10px;padding:12px}
+  .architecture-step-wrap,.architecture-step-wrap:last-child{display:block;grid-column:auto}
+  .architecture-connector{display:none}
+  .architecture-step{min-height:0;padding:15px}
+  .architecture-step header{padding-bottom:10px}
+  .architecture-step h3{min-height:0;margin:14px 0 11px}
+  .architecture-step>div{grid-template-columns:1fr 1fr;gap:6px}
+  .architecture-step>div span{padding:7px}
+  .architecture-engine-rail{min-height:0}
+}
