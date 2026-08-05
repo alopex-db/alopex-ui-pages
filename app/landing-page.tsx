@@ -13,15 +13,15 @@ type PageCopy = {
 
 const copy: Record<Locale, PageCopy> = {
   en: {
-    nav: ["Overview", "Components", "Architecture", "Examples", "Roadmap"], lang: "JA", langHref: "/ja/",
+    nav: ["Overview", "Application Model", "Framework", "Composition", "Roadmap"], lang: "JA", langHref: "/ja/",
     eyebrow: "A CONSISTENT MODEL FOR DATA APPLICATIONS",
     hero: "One interface, wherever the data moves.",
     lead: "Alopex Data UI keeps backend differences at the boundary and unifies data, queries, panels, dashboards, and editing in one application framework—so every data experience can evolve as one coherent system.",
-    explore: "Explore Components", viewArchitecture: "View Architecture",
+    explore: "Explore Framework", viewArchitecture: "View Application Model",
     problem: "Backend choices should not reshape the product experience",
     problemBody: "When queries, schema conversion, filters, and selection state are tied directly to a backend, infrastructure decisions spill into the product. Alopex Data UI keeps that complexity at the boundary.",
-    concept: "Different backends. One way of building.",
-    conceptBody: "Adapters translate schema, queries, filters, selections, and editable records into one DataSource contract. Components work with that contract, while backend-specific behavior stays behind the boundary.",
+    concept: "One application model, from source to workflow.",
+    conceptBody: "Alopex Data UI connects a stable data contract, a shared dashboard runtime, and persistent application context. The result is not just compatible components, but one operating model for complete data applications.",
     boundary: "A stable data boundary. A shared application runtime.",
     existingTitle: "Rendering and interaction engines",
     existingBody: "Rendering, controls, virtualization, charts, maps, graph layouts, and editors stay with mature libraries.",
@@ -35,15 +35,15 @@ const copy: Record<Locale, PageCopy> = {
     inProgress: "IN PROGRESS", planned: "PLANNED", cta: "Let the data move. Keep the product coherent.", ctaBody: "Build today without letting today’s backend choices determine tomorrow’s interface.", github: "View on GitHub", followRoadmap: "Follow the Roadmap", footer: "A consistent UI model for data applications",
   },
   ja: {
-    nav: ["概要", "コンポーネント", "設計", "コード例", "ロードマップ"], lang: "EN", langHref: "/",
+    nav: ["概要", "Application Model", "Framework", "実装例", "ロードマップ"], lang: "EN", langHref: "/",
     eyebrow: "データアプリケーションのための共通UIモデル",
     hero: "変わるデータに、変わらない使い心地を。",
     lead: "Alopex Data UIは、接続先の違いを境界に閉じ込め、データ、クエリ、Panel、Dashboard、編集をひとつのApplication Frameworkで統合します。探索から運用まで、一貫した体験として育てられます。",
-    explore: "コンポーネントを見る", viewArchitecture: "設計を見る",
+    explore: "Frameworkを見る", viewArchitecture: "Application Modelを見る",
     problem: "データの違いまで、画面の違いにしない。",
     problemBody: "クエリ、スキーマ変換、絞り込み、選択状態がバックエンドへ直結していると、基盤の判断がそのまま画面の制約になります。Alopex Data UIは、その複雑さを境界の内側へ収めます。",
-    concept: "つなぎ方の違いは、境界で整える。",
-    conceptBody: "アダプターが、スキーマ、クエリ、フィルター、選択状態、レコード編集を共通のDataSource契約へ変換します。コンポーネントはその契約だけを見て、接続先固有の処理は境界の内側に留めます。",
+    concept: "接続から運用まで、ひとつのApplication Modelでつなぐ。",
+    conceptBody: "安定したData Contract、共通のDashboard Runtime、永続化できるApplication Contextを連続したモデルとして提供します。揃えるのは部品のAPIだけではなく、データアプリケーション全体の動き方です。",
     boundary: "データ境界を揃え、アプリケーションの実行基盤まで共有する。",
     existingTitle: "描画と操作は、成熟したライブラリに任せる",
     existingBody: "コントロール、仮想スクロール、チャート、地図、グラフ描画、エディターは、実績あるライブラリの強みをそのまま活用します。",
@@ -109,34 +109,35 @@ const dashboardFrameworkCopy = {
     eyebrow: "DASHBOARD APPLICATION FRAMEWORK",
     title: "From data components to a complete application runtime",
     body: "Grafana-class dashboard UX needs more than another chart. Alopex Data UI adds a shared runtime for querying, transforming, composing, saving, and reusing interactive data applications.",
-    items: [
-      ["Panel", "The execution unit that brings queries, transforms, visualization settings, links, and interaction state together."],
-      ["Dashboard Canvas", "A persistent authoring canvas for dragging, resizing, grouping, and arranging panels."],
-      ["Query Runner", "A shared runtime for execution, cancellation, caching, streaming, retries, and query status."],
-      ["Data Frame", "A columnar result model shared by charts, tables, maps, graphs, logs, and traces."],
-      ["Transformation Pipeline", "Compose filters, joins, groups, calculations, pivots, sorting, and time alignment before rendering."],
-      ["Time Range", "Share time range, timezone, zoom, and auto-refresh across an entire dashboard."],
-      ["Dashboard Variables", "Drive queries, titles, links, filters, and repeated panels from reusable variables."],
-      ["Visualization Registry", "Register and exchange charts, tables, logs, traces, maps, and graph renderers as plugins."],
-      ["Dashboard Library", "Save, share, version, import, export, and reuse dashboards, panels, and templates."],
+    groups: [
+      ["Execute data", "Run, cancel, cache, stream, and transform every result through one coordinated execution path.", ["Query Runner", "Data Frame", "Transformation Pipeline"]],
+      ["Compose experiences", "Bind data, visualization, layout, time, variables, links, and interaction into reusable panels and dashboards.", ["Panel Model", "Dashboard Canvas", "Time Range", "Dashboard Variables"]],
+      ["Save and extend", "Persist the application as a document, exchange renderers as plugins, and reuse governed assets over time.", ["Dashboard Document", "Visualization Registry", "Dashboard Library", "Version History"]],
     ],
   },
   ja: {
     eyebrow: "DASHBOARD APPLICATION FRAMEWORK",
     title: "部品の集合から、データアプリケーションの実行基盤へ。",
     body: "Grafana相当のダッシュボード体験に必要なのは、チャートの追加ではありません。クエリ、変換、配置、保存、再利用を一貫して扱う共通ランタイムを、Alopex Data UIの正式な製品スコープとして加えます。",
-    items: [
-      ["Panel", "クエリ、変換、表示設定、可視化、リンク、操作状態をまとめる基本実行単位。"],
-      ["Dashboard Canvas", "Panelをドラッグ、リサイズ、グループ化し、配置を保存できる編集キャンバス。"],
-      ["Query Runner", "実行、キャンセル、キャッシュ、ストリーミング、再試行、状態管理を共通化。"],
-      ["Data Frame", "チャート、表、地図、グラフ、ログ、トレースで共有できる列指向の結果モデル。"],
-      ["Transformation Pipeline", "フィルター、結合、集約、計算、ピボット、並べ替え、時間整列を表示前に構成。"],
-      ["Time Range", "時間範囲、タイムゾーン、ズーム、自動更新をDashboard全体へ共有。"],
-      ["Dashboard Variables", "クエリ、タイトル、リンク、フィルター、Panelの繰り返しを動的に制御。"],
-      ["Visualization Registry", "チャート、表、ログ、トレース、地図、グラフをプラグインとして登録・交換。"],
-      ["Dashboard Library", "Dashboard、Panel、テンプレートを保存、共有、履歴管理、再利用。"],
+    groups: [
+      ["データを実行する", "実行、キャンセル、キャッシュ、ストリーミング、変換を、ひとつの協調した実行経路で扱います。", ["Query Runner", "Data Frame", "Transformation Pipeline"]],
+      ["体験を構成する", "データ、可視化、レイアウト、時間、Variables、リンク、操作を、再利用できるPanelとDashboardへ束ねます。", ["Panel Model", "Dashboard Canvas", "Time Range", "Dashboard Variables"]],
+      ["保存し、拡張する", "ApplicationをDocumentとして永続化し、RendererをPluginとして交換し、管理された資産として再利用します。", ["Dashboard Document", "Visualization Registry", "Dashboard Library", "Version History"]],
     ],
   },
+} as const;
+
+const applicationModelCopy = {
+  en: [
+    ["DATA CONTRACT", "Normalize DataSource, schema, filters, selections, and editable records across every backend."],
+    ["DASHBOARD RUNTIME", "Execute queries, transform DataFrames, and coordinate panels, time range, and variables."],
+    ["APPLICATION CONTEXT", "Persist dashboards, layouts, links, drill-down, focus, actions, and version history."],
+  ],
+  ja: [
+    ["DATA CONTRACT", "DataSource、Schema、Filter、Selection、編集可能なRecordを、接続先をまたいで共通化します。"],
+    ["DASHBOARD RUNTIME", "Queryを実行し、DataFrameを変換し、Panel、Time Range、Variablesを協調させます。"],
+    ["APPLICATION CONTEXT", "Dashboard、Layout、Link、Drill-down、Focus、Action、Version Historyを永続化します。"],
+  ],
 } as const;
 
 const useCaseCopy = {
@@ -164,9 +165,8 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
   const principles = principleCopy[locale];
   const phases = phaseCopy[locale];
   const dashboardFramework = dashboardFrameworkCopy[locale];
-  const ids = ["#overview", "#components", "#architecture", "#examples", "#roadmap"];
+  const ids = ["#overview", "#architecture", "#components", "#examples", "#roadmap"];
   const sectionLabels = locale === "ja" ? ["01 / 課題", "02 / 共通モデル", "03 / 境界", "04 / コンポーネント", "05 / コード例", "06 / ユースケース", "07 / ロードマップ"] : ["01 / THE PROBLEM", "02 / THE MODEL", "03 / THE BOUNDARY", "04 / COMPONENTS", "05 / COMPOSITION", "06 / USE CASES", "07 / ROADMAP"];
-  const layers = locale === "ja" ? [["06","APPLICATION / STUDIO","業務アプリケーションとAlopex Studio"],["05","DASHBOARD / WORKSPACE","Dashboard · Explorer · Grid · Map · Graph · Editor"],["04","PANEL RUNTIME","Query · Transform · Visualization · Interaction"],["03","DATA MODEL","DataFrame · Schema · Filter · Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","データ処理・描画・操作を担う既存エンジン"]] : [["06","APPLICATION / STUDIO","Your product and Alopex Studio"],["05","DASHBOARD / WORKSPACE","Dashboard · Explorer · Grid · Map · Graph · Editor"],["04","PANEL RUNTIME","Query · Transform · Visualization · Interaction"],["03","DATA MODEL","DataFrame · Schema · Filter · Selection"],["02","DATA SOURCE ADAPTERS","AlopexDB / DuckDB / API / File / Custom"],["01","RENDERER ADAPTERS","RevoGrid / ECharts / Perspective / deck.gl / cosmos.gl"],["00","PROVEN ENGINES","Data, rendering, and interaction engines"]];
 
   return <main lang={locale} className="site">
     <header className="site-header">
@@ -201,16 +201,14 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
       </div>
     </section>
 
-    <section className="signal-strip five" aria-label="Product principles"><div><b>01</b> STABLE DATA BOUNDARY</div><div><b>02</b> FRAMEWORK INDEPENDENT</div><div><b>03</b> RENDERER INDEPENDENT</div><div><b>04</b> SCHEMA DRIVEN</div><div><b>05</b> LARGE-DATA READY</div></section>
-
     <section className="section shell problem" id="overview"><SectionIndex>{sectionLabels[0]}</SectionIndex><div className="problem-copy"><h2>{t.problem}</h2><p>{t.problemBody}</p></div>
       <div className="problem-grid">{problemItems[locale].map(([title, description],i) => <article key={title}><span>{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
     </section>
 
     <section className="section concept" id="architecture"><div className="shell"><SectionIndex light>{sectionLabels[1]}</SectionIndex><div className="section-heading split"><h2>{t.concept}</h2><p>{t.conceptBody}</p></div>
-      <div className="model-diagram"><div className="engine-inputs"><span>AlopexDB</span><i>/</i><span>DuckDB</span><i>/</i><span>API · FILE · CUSTOM</span></div><div className="model-core"><span>ALOPEX DATA UI CORE</span><div>{["DataSource", "Schema", "Filter", "Selection"].map(x => <b key={x}>{x}</b>)}</div></div><div className="model-rail"/>
-        <div className="engine-row">{[["FORM","Vaadin"],["GRID","RevoGrid"],["CHART","ECharts"],["GRAPH","cosmos.gl"],["MAP","deck.gl"]].map(([a,b],i) => <div key={a}><span className={`glyph g${i}`}/><strong>{a}</strong><small>{b}</small></div>)}</div>
-      </div></div></section>
+      <div className="application-model">{applicationModelCopy[locale].map(([name, description], i)=><article key={name}><span>{String(i+1).padStart(2,"0")}</span><h3>{name}</h3><p>{description}</p></article>)}</div>
+      <div className="application-model-flow"><span>DATABASE · API · FILE · STREAM</span><b>→</b><strong>SHARED APPLICATION MODEL</strong><b>→</b><span>GRID · CHART · MAP · GRAPH · APP</span></div>
+    </div></section>
 
     <section className="section shell boundary"><SectionIndex>{sectionLabels[2]}</SectionIndex><div className="section-heading"><h2>{t.boundary}</h2></div>
       <div className="boundary-grid"><article className="existing"><header><span>PROVEN LIBRARIES</span><b>{t.existingTitle}</b></header><div className="tag-cloud">{["Lit","Vaadin","RevoGrid","AG Grid","Apache ECharts","Perspective","deck.gl","MapLibre GL","cosmos.gl","CodeMirror","Dockview"].map(x=><span key={x}>{x}</span>)}</div><p>{t.existingBody}</p></article>
@@ -220,7 +218,7 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
 
     <section className="section components" id="components"><div className="shell"><SectionIndex light>{sectionLabels[3]}</SectionIndex>
       <div className="framework-intro framework-first"><span>{dashboardFramework.eyebrow}</span><h3>{dashboardFramework.title}</h3><p>{dashboardFramework.body}</p></div>
-      <div className="framework-grid">{dashboardFramework.items.map(([name,desc],i)=><article key={name}><span>{String(i+1).padStart(2,"0")}</span><h3>{name}</h3><p>{desc}</p></article>)}</div>
+      <div className="framework-grid">{dashboardFramework.groups.map(([name,desc,modules],i)=><article key={name}><span>{String(i+1).padStart(2,"0")}</span><h3>{name}</h3><p>{desc}</p><ul>{modules.map(module=><li key={module}>{module}</li>)}</ul></article>)}</div>
       <div className="section-heading split component-intro"><h2>{t.components}</h2><p>{t.componentsLead}</p></div>
       <div className="component-grid">{components.map(([name,desc,icon],i)=><article key={name}><div className={`component-icon ${icon}`}><span/><span/><span/></div><span className="component-number">0{i+1}</span><h3>{name}</h3><p>{desc}</p><a href="#examples">{t.componentLink} <span>↗</span></a></article>)}</div>
     </div></section>
@@ -229,9 +227,6 @@ export function LandingPage({ locale, basePath = "" }: { locale: Locale; basePat
       <div className="code-tabs"><span className="active">TypeScript</span><span>DataSource contract</span><span>Custom adapter</span></div><div className="code-window"><div className="line-numbers">1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</div><pre><code><span className="muted">{"// Adapt any backend to the stable DataSource contract."}</span>{`\n`}<span className="blue">const</span> source: <span className="pink">DataSource</span> = {'{'}{`\n  `}schema: () =&gt; backend.getSchema(),{`\n  `}query: (request) =&gt; backend.query(request),{`\n  `}update: (change) =&gt; backend.update(change),{`\n`}{'}'};{`\n\n`}<span className="muted">{"// Every component consumes the same contract."}</span>{`\n`}grid.dataSource = source;{`\n`}chart.dataSource = source;{`\n`}form.dataSource = source;{`\n`}explorer.dataSource = source;</code></pre></div>
     </section>
 
-    <section className="section architecture-map"><div className="shell"><div className="section-heading split"><h2>{t.architecture}</h2><p>{t.architectureBody}</p></div><div className="layer-stack">
-      {layers.map(([n,a,b],i)=><div key={n} className={i===2||i===3?"accent":""}><span>{n}</span><b>{a}</b><p>{b}</p></div>)}
-      <div className="db-adapter engine-card"><span className="engine-card-label">DATA SOURCES</span><div><b>AlopexDB</b><small>Built-in adapter</small></div><div><b>DuckDB</b><small>Built-in adapter</small></div><div><b>Custom Backend</b><small>Adapter</small></div><span>{locale === "ja" ? "接続先の違いは境界で吸収" : "Backend details stay at the boundary"}</span></div></div></div></section>
 
     <section className="section shell use-cases"><SectionIndex>{sectionLabels[5]}</SectionIndex><div className="section-heading"><h2>{t.useCases}</h2></div><div className="use-case-grid">{useCases.map(([name,desc],i)=><article key={name}><span className={`scene scene-${i}`}><i/><i/><i/><i/></span><div><small>0{i+1}</small><h3>{name}</h3><p>{desc}</p></div></article>)}</div></section>
 

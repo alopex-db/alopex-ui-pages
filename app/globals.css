@@ -258,3 +258,27 @@ footer{background:#080a09}
 .framework-intro.framework-first{margin-top:0;padding-top:0;border-top:0}
 .component-intro{margin-top:92px;padding-top:58px;border-top:1px solid #343b38}
 @media(max-width:600px){.alopex-capability-grid{grid-template-columns:1fr}.alopex-capability-grid .runtime-capability{border-left:0;border-top:2px solid var(--brand);padding:20px 0 0}.component-intro{margin-top:64px;padding-top:42px}}
+/* A shorter page rhythm: one complementary model section instead of repeated architecture diagrams. */
+.application-model{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:56px}
+.application-model article{min-height:250px;padding:28px;border:1px solid #35403b;border-radius:12px;background:linear-gradient(145deg,#171d1a,#111513)}
+.application-model article>span{font:700 9px var(--mono);color:var(--brand)}
+.application-model h3{margin:50px 0 14px;font:700 13px var(--mono);letter-spacing:.04em;color:#fff}
+.application-model p{margin:0;color:#98a29d;font-size:13px;line-height:1.7}
+.application-model-flow{display:grid;grid-template-columns:1fr auto 1.2fr auto 1fr;align-items:center;gap:18px;margin-top:18px;padding:18px 22px;border:1px solid #303936;border-radius:9px;font:8px var(--mono);letter-spacing:.09em;color:#77827c;text-align:center}
+.application-model-flow strong{color:var(--teal)}
+.application-model-flow b{color:var(--brand)}
+.framework-grid article{min-height:300px}
+.framework-grid article h3{margin-top:38px}
+.framework-grid article ul{display:flex;flex-wrap:wrap;gap:7px;margin:24px 0 0;padding:0;list-style:none}
+.framework-grid article li{padding:7px 9px;border:1px solid #35433e;border-radius:5px;background:#171d1a;font:8px var(--mono);color:#b5c0bb}
+.boundary,.components{padding-block:105px}
+@media(max-width:900px){.application-model{grid-template-columns:1fr}.application-model article{min-height:0}.application-model h3{margin-top:30px}.application-model-flow{grid-template-columns:1fr}.application-model-flow b{transform:rotate(90deg)}}
+/* Keep the long-form story scannable on phones without removing content. */
+@media(max-width:600px){
+  .section{padding-block:70px}
+  .component-grid article{min-height:0;padding:22px}
+  .component-grid p{min-height:0;margin-bottom:24px}
+  .framework-grid article{padding:22px}
+  .boundary blockquote{margin-top:46px}
+  .roadmap-list article{padding-block:22px}
+}
